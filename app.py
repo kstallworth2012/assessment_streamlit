@@ -43,6 +43,7 @@ def main():
                 # avg_cat_funded_success.plot(kind="pie")
             funded_dates = df['funded date'].value_counts()
             st.dataframe(funded_dates)
+            st.bar_chart(funded_dates)
             avg_goal = df.groupby('status')['goal'].mean()
             st.dataframe(avg_goal)
             st.bar_chart(avg_goal)
