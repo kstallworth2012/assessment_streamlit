@@ -6,7 +6,7 @@ initial_sidebar_state='collapsed') #initial_sidebar_state='collapsed 'expanded o
 import pandas as pd
 import numpy as np
 # import seaborn as sns
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 from PIL import Image
 import plotly.express as px
 
