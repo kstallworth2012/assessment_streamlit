@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 # import seaborn as sns
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 from PIL import Image
 # import plotly.express as px
 
@@ -59,7 +59,7 @@ def run_eda_app():
         with st.expander("pledged counts"):
             st.dataframe(df['pledged'].value_counts())
             fig = plt.figure()
-            df['pledged'].value_counts().plot(kind='bar)
+            df['pledged'].value_counts().plot(kind='bar')
             st.pyplot(fig)
 
         with st.expander("funded percentage counts"):
