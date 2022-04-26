@@ -1,3 +1,2 @@
-python pip install seaborn
 python pip install matplotlib.pyplot
 python pip install plotly==5.7.0
