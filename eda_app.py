@@ -58,9 +58,9 @@ def run_eda_app():
 
         with st.expander("pledged counts"):
             st.dataframe(df['pledged'].value_counts())
-            fig = plt.figure()
-            df['pledged'].value_counts().plot(kind='bar')
-            st.pyplot(fig)
+#             fig = plt.figure()
+#             df['pledged'].value_counts().plot(kind='bar')
+            st.bar_chart(df['pledged'].value_counts())
 
         with st.expander("funded percentage counts"):
             st.dataframe(df['funded percentage'].value_counts())
