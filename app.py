@@ -43,6 +43,9 @@ def main():
                 # avg_cat_funded_success.plot(kind="pie")
             funded_dates = df['funded date'].value_counts()
             st.dataframe(funded_dates)
+            avg_goal = df.groupby('status')['goal'].mean()
+            p1 = px.pie(avg_goal,names='Status', values='goal')
+            st.plotly_chart(p1,use_container_width=True)
                  
         elif choice == "EDA":
             run_eda_app()
