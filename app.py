@@ -45,6 +45,7 @@ def main():
             st.dataframe(funded_dates)
             avg_goal = df.groupby('status')['goal'].mean()
             st.dataframe(avg_goal)
+            st.bar_chart(avg_goal)
             st.code('''
             import streamlit as st
 #Must do this first in Streamlit
