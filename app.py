@@ -5,7 +5,7 @@ page_icon=':smiley',layout='wide',
 initial_sidebar_state='collapsed') #initial_sidebar_state='collapsed 'expanded or auto
 import pandas as pd
 import numpy as np
-import seaborn as sns
+# import seaborn as sns
 import matplotlib.pyplot as plt
 from PIL import Image
 import plotly.express as px
