@@ -74,9 +74,9 @@ def run_eda_app():
         st.subheader('Plots')
                 #layouts
         col1,col2 = st.columns([2,1])
-        # with st.expander("Histogram of Project Duration"):
-        #     # duration_hist = sns.displot(x='duration',data=df,kde=True)
-        #     # st.pyplot(duration_hist)
+        with st.expander("Histogram of Project Duration"):
+            duration_hist = sns.displot(x='duration',data=df,kde=True)
+            st.pyplot(duration_hist)
         with col1:
             with st.expander('Status counts plot'):
                 fig = plt.figure()
