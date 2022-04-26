@@ -35,7 +35,9 @@ def main():
             st.metric(label='Ideal Launch Time',value='Sunday january 1, 2012 4:59PM',delta=None)
             successful=df[df['status'].isin(['successful'])].groupby(['status','category','pledged'])['pledged'].mean()
                 # successful.sort_values(by=['pledged'])
-            st.dataframe(successful)
+            with st.expander('Successfull'):
+                st.dataframe(successful)
+            
             avg_cat_funded_success = df[df['status'].isin(['successful'])].groupby(['status','category'])['pledged'].mean()
             avg_goal_funded_success = df[df['status'].isin(['successful'])].groupby(['status','goal'])['pledged'].mean()
             
