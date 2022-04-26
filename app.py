@@ -44,7 +44,7 @@ def main():
             funded_dates = df['funded date'].value_counts()
             st.dataframe(funded_dates)
             avg_goal = df.groupby('status')['goal'].mean()
-            p1 = px.pie(avg_goal,names='Status', values='goal')
+            p1 = px.pie(avg_goal,names='status', values='goal')
             st.plotly_chart(p1,use_container_width=True)
                  
         elif choice == "EDA":
