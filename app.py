@@ -16,7 +16,8 @@ from ml_app import run_ml_app
 
 
 def main():
-
+# According to pandas documentation, you can specify the codec by passing the encoding argument to the read_csv() function.
+        df = pd.read_csv("DSI_kickstarterscrape_dataset.csv",encoding_errors='ignore')
         st.title("Assessment in Streamlit")
         menu = ["HOME","EDA","ML","ABOUT"]
         choice=st.sidebar.selectbox("Assessment Menu",menu)
