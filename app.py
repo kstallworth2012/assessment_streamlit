@@ -38,7 +38,9 @@ def main():
             st.dataframe(successful)
             avg_cat_funded_success = df[df['status'].isin(['successful'])].groupby(['status','category'])['pledged'].mean()
             avg_goal_funded_success = df[df['status'].isin(['successful'])].groupby(['status','goal'])['pledged'].mean()
-            st.bar_chart(avg_cat_funded_success)
+            st.dataframe(avg_cat_funded_success)
+            st.dataframe(avg_goal_funded_success)
+          
                 # st.table(avg_goal_funded_success.value_counts())
             avg=avg_goal_funded_success.value_counts()
                 # avg_cat_funded_success.plot(kind="pie")
