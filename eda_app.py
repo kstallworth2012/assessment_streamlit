@@ -79,9 +79,9 @@ def run_eda_app():
         #     # st.pyplot(duration_hist)
         with col1:
             with st.expander('Status counts plot'):
-#                 fig = plt.figure()
-#                 sns.countplot(df['status'])
-#                 st.pyplot(fig)
+                fig = plt.figure()
+                sns.countplot(df['status'])
+                st.pyplot(fig)
 
                 status_df = df['status'].value_counts().to_frame()
                 status_df = status_df.reset_index()
