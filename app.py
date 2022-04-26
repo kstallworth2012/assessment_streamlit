@@ -21,18 +21,18 @@ def main():
         st.title("Assessment in Streamlit")
         menu = ["HOME","EDA","ML","ABOUT"]
         choice=st.sidebar.selectbox("Assessment Menu",menu)
-
+        col1, col2, col3 = st.columns(3)
         if choice == "HOME":
             st.subheader("Home")
             st.header("Be sure to consider the following:")
                 #
 #                 st.write("What's the best length of time to run a campaign? 90.96")
-            st.metric(label='Best Length of Time',value=90.96,delta=None)
+            col1.st.metric(label='Best Length of Time',value=90.96,delta=None)
 #                 st.write("What's the ideal pledge goal?")
 #                 st.write(" What type of projects would be most successful at getting funded? design")
-            st.metric(label='Project Most\n Likely Funded',value='Design',delta=None)
+            col2.st.metric(label='Project Most\n Likely Funded',value='Design',delta=None)
 #                 st.write("Is there an ideal month/day/time to launch a campaign sunday january 1 4:59 pm or weekend summertime")
-            st.metric(label='Ideal Launch Time',value='Sunday january 1, 2012 4:59PM',delta=None)
+            col3.st.metric(label='Ideal Launch Time',value='Sunday january 1, 2012 4:59PM',delta=None)
             successful=df[df['status'].isin(['successful'])].groupby(['status','category','pledged'])['pledged'].mean()
                 # successful.sort_values(by=['pledged'])
             with st.expander('Successfull'):
