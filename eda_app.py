@@ -22,7 +22,7 @@ def run_eda_app():
 
 
     st.header("Exploratory Data Analysis")
-    df = load_data("data\\DSI_kickstarterscrape_dataset.csv")
+    df = load_data("data\DSI_kickstarterscrape_dataset.csv")
 
 
     s_menu = ['Descriptive','Plots']
