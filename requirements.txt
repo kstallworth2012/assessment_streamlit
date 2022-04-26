@@ -1,2 +1,1 @@
-pip install matplotlib.pyplot
-pip install plotly==5.7.0
+
