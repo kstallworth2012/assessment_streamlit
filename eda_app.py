@@ -59,7 +59,7 @@ def run_eda_app():
         with st.expander("pledged counts"):
             st.dataframe(df['pledged'].value_counts())
             fig = plt.figure()
-            sns.countplot(df['pledged'].value_counts()
+            sns.countplot(df['pledged'].value_counts())
             st.pyplot(fig)
 
         with st.expander("funded percentage counts"):
