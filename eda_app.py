@@ -42,6 +42,7 @@ def run_eda_app():
             st.dataframe(df['category'].value_counts())
             cat_menu = df['category'].unique().tolist()
             myCatBox=st.selectbox('Cat box',cat_menu)
+            st.dataframe(df[df['category'] ==myCatBox])
 
         with st.expander("Sub Category Distribution"):
             st.dataframe(df['subcategory'].value_counts())
