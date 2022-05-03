@@ -100,7 +100,7 @@ def run_eda_app():
                 st.dataframe(status_df)
 
                 # using plotly_chart
-                p1 = px.pie(status_df,names='Status', values='Status Counts')
+                p1 = px.pie(status_df,names='status', values='Status Counts')
                 st.plotly_chart(p1,use_container_width=True)
 
         #
