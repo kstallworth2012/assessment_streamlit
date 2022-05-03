@@ -81,6 +81,8 @@ def run_eda_app():
             st.dataframe(df[df['location'] ==mylocalBox])
             me = px.pie(df[df['location'] ==mylocalBox],names='status', values='pledged')
             st.plotly_chart(me,use_container_width=True)
+            me2 = px.pie(df[df['location'] ==mylocalBox],names='subcategory', values='backers')
+            st.plotly_chart(me2,use_container_width=True)
     elif submenu == "Plots":
         st.subheader('Plots')
                 #layouts
