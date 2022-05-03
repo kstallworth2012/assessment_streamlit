@@ -23,11 +23,12 @@ def run_eda_app():
 
     st.header("Exploratory Data Analysis")
     df = load_data("DSI_kickstarterscrape_dataset.csv")
+     categorical_cols = df.select_dtypes(include=['object']).columns.tolist()
 
 
     s_menu = ['Descriptive','Plots']
     submenu = st.sidebar.selectbox("Submenu",s_menu)
-
+    another_submenu = st.sidebar.selectbox('Another Menu',categorical_cols)
     if submenu == "Descriptive":
         st.dataframe(df)
 
@@ -39,6 +40,7 @@ def run_eda_app():
 
         with st.expander("Category Distribution"):
             st.dataframe(df['category'].value_counts())
+            
 
         with st.expander("Sub Category Distribution"):
             st.dataframe(df['subcategory'].value_counts())
