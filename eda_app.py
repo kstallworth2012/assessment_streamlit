@@ -23,7 +23,7 @@ def run_eda_app():
 
     st.header("Exploratory Data Analysis")
     df = load_data("DSI_kickstarterscrape_dataset.csv")
-     categorical_cols = df.select_dtypes(include=['object']).columns.tolist()
+    categorical_cols = df.select_dtypes(include=['object']).columns.tolist()
 
 
     s_menu = ['Descriptive','Plots']
