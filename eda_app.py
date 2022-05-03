@@ -74,9 +74,11 @@ def run_eda_app():
             st.dataframe(df['funded percentage'].value_counts())
 
 
-        with st.expander("Info"):
-            st.dataframe(df.info())
-
+        with st.expander("By Location"):
+            st.dataframe(df['location'].value_counts())
+            local_menu = df['location'].unique().tolist()
+            mylocalBox=st.selectbox('Location box',local_menu)
+            st.dataframe(df[df['category'] ==mylocalBox])
 
     elif submenu == "Plots":
         st.subheader('Plots')
