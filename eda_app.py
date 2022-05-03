@@ -46,6 +46,10 @@ def run_eda_app():
 
         with st.expander("Sub Category Distribution"):
             st.dataframe(df['subcategory'].value_counts())
+            subcat_menu = df['subcategory'].unique().tolist()
+            mysubCatBox=st.selectbox('Cat box',subcat_menu)
+            st.dataframe(df[df['subcategory'] ==mysubCatBox])
+            st.write(df[df['subcategory']==mysubCatBox].shape)
 
         with st.expander("Funded Data Distribution"):
             st.dataframe(df['funded date'].value_counts())
