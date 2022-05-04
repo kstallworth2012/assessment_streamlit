@@ -83,6 +83,13 @@ def run_eda_app():
             st.plotly_chart(me,use_container_width=True)
 #             me2 = px.pie(df[df['location'] ==mylocalBox],names='subcategory', values='backers')
 #             st.plotly_chart(me2,use_container_width=True)
+
+            fig = px.scatter(df[df['location'] ==mylocalBox], x="goal", y="pledged",
+	         size="pledged", color="category",
+                 hover_name="name", log_x=True, size_max=60)
+            st.plotly_chart(fig)
+
+
             fig2 = px.sunburst(df[df['location'] ==mylocalBox], path=['status','category', 'subcategory', 'location','name'], values='pledged', color='category')
             st.plotly_chart(fig2)
     elif submenu == "Plots":
