@@ -30,6 +30,7 @@ def run_eda_app():
     submenu = st.sidebar.selectbox("Submenu",s_menu)
 #     another_submenu = st.sidebar.selectbox('Another Menu',categorical_cols)
     if submenu == "Descriptive":
+                st.write("HELLO!")
       with st.expander("By Location"):
             st.dataframe(df['location'].value_counts())
             local_menu = df['location'].unique().tolist()
