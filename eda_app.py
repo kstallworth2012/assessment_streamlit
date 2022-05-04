@@ -63,6 +63,9 @@ def run_eda_app():
 
         with st.expander("Goal counts"):
             st.dataframe(df['goal'].value_counts())
+	    fig = plt.figure()
+            sns.countplot(df['pledged'].value_counts())
+            st.pyplot(fig)
 
         with st.expander("pledged counts"):
             st.dataframe(df['pledged'].value_counts())
