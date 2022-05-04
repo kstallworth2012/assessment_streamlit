@@ -63,9 +63,9 @@ def run_eda_app():
 
         with st.expander("Goal counts"):
             st.dataframe(df['goal'].value_counts())
-	    fig = plt.figure()
-            sns.countplot(df['pledged'].value_counts())
-            st.pyplot(fig)
+	    g_fig = plt.figure()
+            sns.countplot(df['goal'].value_counts())
+            st.pyplot(g_fig)
 
         with st.expander("pledged counts"):
             st.dataframe(df['pledged'].value_counts())
@@ -81,7 +81,8 @@ def run_eda_app():
             st.dataframe(df['location'].value_counts())
             local_menu = df['location'].unique().tolist()
             mylocalBox=st.selectbox('Location box',local_menu)
-            st.dataframe(df[df['location'] ==mylocalBox])
+            loc_df = df[df['location'] ==mylocalBox]
+	    st.dataframe(loc_df)
             me = px.pie(df[df['location'] ==mylocalBox],names='status', values='pledged')
             st.plotly_chart(me,use_container_width=True)
 #             me2 = px.pie(df[df['location'] ==mylocalBox],names='subcategory', values='backers')
