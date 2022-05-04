@@ -77,8 +77,7 @@ def run_eda_app():
 #         with st.expander("funded percentage counts"):
 #             st.dataframe(df['funded percentage'].value_counts())
 
-
-        with st.expander("By Location"):
+	with st.expander("By Location"):
             st.dataframe(df['location'].value_counts())
             local_menu = df['location'].unique().tolist()
             mylocalBox=st.selectbox('Location box',local_menu)
