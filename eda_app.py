@@ -30,53 +30,6 @@ def run_eda_app():
     submenu = st.sidebar.selectbox("Submenu",s_menu)
     another_submenu = st.sidebar.selectbox('Another Menu',categorical_cols)
     if submenu == "Descriptive":
-        st.dataframe(df)
-
-        with st.expander("Data Columns"):
-            st.dataframe(df.columns)
-
-        with st.expander("Descriptive Summary"):
-            st.dataframe(df.describe())
-
-        with st.expander("Category Distribution"):
-            st.dataframe(df['category'].value_counts())
-            cat_menu = df['category'].unique().tolist()
-            myCatBox=st.selectbox('Cat box',cat_menu)
-            st.dataframe(df[df['category'] ==myCatBox])
-
-        with st.expander("Sub Category Distribution"):
-            st.dataframe(df['subcategory'].value_counts())
-            subcat_menu = df['subcategory'].unique().tolist()
-            mysubCatBox=st.selectbox('Cat box',subcat_menu)
-            st.dataframe(df[df['subcategory'] ==mysubCatBox])
-            st.write(df[df['subcategory']==mysubCatBox].shape)
-
-        with st.expander("Funded Data Distribution"):
-            st.dataframe(df['funded date'].value_counts())
-
-
-        with st.expander("Backer counts"):
-            st.dataframe(df['backers'].value_counts())
-
-        with st.expander("Duration counts"):
-            st.dataframe(df['duration'].value_counts())
-
-        with st.expander("Goal counts"):
-
-# 	    st.dataframe(df['goal'].value_counts())
-# 	    g_fig = plt.figure()
-# 	    sns.countplot(df['goal'].value_counts())
-# 	    st.pyplot(g_fig)
-
-#         with st.expander("pledged counts"):
-#             st.dataframe(df['pledged'].value_counts())
-#             fig = plt.figure()
-#             sns.countplot(df['pledged'].value_counts())
-#             st.pyplot(fig)
-
-#         with st.expander("funded percentage counts"):
-#             st.dataframe(df['funded percentage'].value_counts())
-
 	with st.expander("By Location"):
 		st.dataframe(df['location'].value_counts())
 #             local_menu = df['location'].unique().tolist()
